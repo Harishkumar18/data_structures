@@ -23,3 +23,6 @@ class Deque:
     def size(self):
         return len(self.items)
 
+    def show_items(self):
+        return self.items
+
