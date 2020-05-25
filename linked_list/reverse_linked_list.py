@@ -15,19 +15,19 @@ def reverseList(linked_list):
         current = next_ele
         if next_ele:
             next_ele = next_ele.next
-    ll.head = prev
+    linked_list.head = prev
 
 
-
-ll = LinkedList()
-ll.insert(1)
-ll.insert(2)
-ll.insert(3)
-ll.insert(4)
-ll.insert(5)
-print(f"Linked List")
-print(ll.print_list())
-print(f"reversed linked list")
-reverseList(ll)
-ll.print_list()
+if __name__ == '__main__':
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(4)
+    ll.insert(5)
+    print(f"Linked List")
+    print(ll.print_list())
+    print(f"reversed linked list")
+    reverseList(ll)
+    ll.print_list()
 
