@@ -30,20 +30,49 @@ class LinkedList:
             temp = temp.next
 
     def skipMdeleteN(self, M, N):
-        pass
+        curr = self.head
+
+        while curr:
+            for _ in range(1, M):
+                if curr is None:
+                    return
+                curr = curr.next
+
+            if curr is None:
+                return
+
+            temp = curr.next
+            for _ in range(1, N+1):
+                if temp is None:
+                    return
+                temp = temp.next
+
+            curr.next = temp
+            curr = temp
+
+
+
 
 
 # Driver program to test above function
 
-
 # Create following linked list
 # 1->2->3->4->5->6->7->8->9->10
 llist = LinkedList()
-M = 2
-N = 3
-llist.push(10)
-llist.push(9)
-llist.push(8)
+# M = 2
+# N = 3
+# llist.push(10)
+# llist.push(9)
+# llist.push(8)
+# llist.push(7)
+# llist.push(6)
+# llist.push(5)
+# llist.push(4)
+# llist.push(3)
+# llist.push(2)
+# llist.push(1)
+M = 3
+N = 2
 llist.push(7)
 llist.push(6)
 llist.push(5)
@@ -51,7 +80,6 @@ llist.push(4)
 llist.push(3)
 llist.push(2)
 llist.push(1)
-
 print("M = %d, N = %d\nGiven Linked List is:" % (M, N))
 llist.printList()
 print(llist.skipMdeleteN(M, N))
