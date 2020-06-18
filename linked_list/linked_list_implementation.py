@@ -37,13 +37,7 @@ class LinkedList:
             current = current.next
 
 
-# ll = LinkedList()
-# ll.insert(1)
-# ll.insert(2)
-# # ll.insert(3)
-# # ll.insert(4)
-# # ll.insert(5)
-# ll.print_list()
+
 # ll.delete_linked_list()
 # print("result after deleting linked list")
 # ll.print_list()
