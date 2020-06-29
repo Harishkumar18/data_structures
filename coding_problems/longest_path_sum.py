@@ -13,7 +13,7 @@ class Node:
 
 
 def get_longest_path_sum(root, curr_sum, curr_len, MAXLEN, MAXSUM):
-    if (not root):
+    if not root:
         if MAXLEN[0]<curr_len:
             MAXLEN[0] = curr_len
             MAXSUM[0] = curr_sum
