@@ -26,4 +26,23 @@ def count_trail_zeros(num):
     return count
 
 
+class Solution:
+    """this approach is of O(log n) complexity"""
+    # @param A : integer
+    # @return an integer
+    def trailingZeroes(self, A):
+        count = 0
+        if A < 5:
+            return 0
+        for i in range(5, A + 1, 5):
+            count += self.find_factors(i)
+        return count
+
+    def find_factors(self, no):
+        count = 0
+        while not no % 5:
+            count += 1
+            no = int(no / 5)
+        return count
+
 print(count_trail_zeros(20))
