@@ -11,12 +11,16 @@ def find_longest_substring(string):
     n = len(string)
     dp = [[0 for _ in range(n)] for _ in range(n)]
     max_length = 1
-    for i in range(n):
-        for j in range(n):
-            if i == j:
-                dp[i][j] = 1
-    # check for sub-string of length 2.
-    start = 0
+    # we improved this for loop
+    # for i in range(n):
+    #     for j in range(n):
+    #         if i == j:
+    #             dp[i][j] = 1
+    max_length = 1
+    i = 0
+    while i < n:
+        dp[i][i] = 1
+        i += 1
     # we can improve the below for loops
     # for i in range(n - 1):
     #     for j in range(i + 1, n):
@@ -27,6 +31,15 @@ def find_longest_substring(string):
     #         else:
     #             dp[i][j] = 0
     #         break
+    # check for sub-string of length 2.
+    start = 0
+    i = 0
+    while i < n - 1:
+        if string[i] == string[i + 1]:
+            dp[i][i + 1] = 1
+            start = i
+            max_length = 2
+        i += 1
 
     k = 3
     while k <= n:
@@ -40,7 +53,7 @@ def find_longest_substring(string):
                     max_length = k
             i += 1
         k += 1
-    return string[start:start+max_length]
+    return string[start:start + max_length]
 
 
 print(find_longest_substring("acaabaa"))
