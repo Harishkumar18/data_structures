@@ -1,32 +1,31 @@
-from heapq import *
+"""
+Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value. So the median is the mean of the two middle value.
+
+For example,
+[2,3,4], the median is 3
+
+[2,3], the median is (2 + 3) / 2 = 2.5
+"""
+from heapq import heappush, heappushpop
 
 
 class MedianFinder:
 
     def __init__(self):
-        self.small = [] #max heap
+        """
+        initialize your data structure here.
+        """
+        self.small = []
         self.large = []
 
-    def addNum(self, num):
+    def addNum(self, num: int) -> None:
         if len(self.small) == len(self.large):
             heappush(self.large, -heappushpop(self.small, -num))
         else:
-            heappush(self.small, heappushpop(self.large, num))
+            heappush(self.small, -heappushpop(self.large, num))
 
-    def findMedian(self):
-        print(self.small)
-        print(self.large)
-        # if len(self.small) == len(self.large):
-        #     return (self.small[0]+self.large[0])//2
-        # else:
-        #     return self.large[0]
-
-# for i in range(10):
-# MedianFinder().addNum(2)
-# MedianFinder().addNum(3)
-# print(MedianFinder().findMedian())
-a = [4,5]
-b=[1,2,3]
-heappush(a, heappushpop(b, 6))
-print(a)
-print(b)
+    def findMedian(self) -> float:
+        if len(self.small) == len(self.large):
+            return (self.large[0] - self.small[0]) / 2
+        else:
+            return self.large[0]
