@@ -1,8 +1,4 @@
-"""
-https://bradfieldcs.com/algos/graphs/prims-spanning-tree-algorithm/
-
-
-"""
+"""https://bradfieldcs.com/algos/graphs/prims-spanning-tree-algorithm/"""
 
 from collections import defaultdict
 from heapq import heappush, heapify, heappop
