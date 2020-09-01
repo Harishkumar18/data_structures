@@ -41,6 +41,7 @@ def find_distinct_char(string, k):
     return list(res)
 
 
+
 # print(find_distinct_char_brute_force("abcabc", 3))
 # print(find_distinct_char_brute_force("abacab", 3))
 # print(find_distinct_char_brute_force("awaglknagawunagwkwagl", 4))
