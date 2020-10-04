@@ -1,4 +1,4 @@
-# Python Script to Implement two stacks in a list
+# Python Script to Implement Ltwo stacks in a list
 class twoStacks:
 
     def __init__(self, n):  # constructor

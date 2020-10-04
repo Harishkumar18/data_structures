@@ -20,7 +20,8 @@ def isPalindrome(head):
         # fast traverses faster and moves to the end of the list if the length is odd
         fast = fast.next.next
 
-        # take it as a tuple being assigned (rev, rev.next, slow) = (slow, rev, slow.next), hence the re-assignment of slow would not affect rev (rev = slow)
+        # take it as a tuple being assigned (rev, rev.next, slow) = (slow, rev, slow.next), hence the re-assignment
+        # of slow would not affect rev (rev = slow)
         rev, rev.next, slow = slow, rev, slow.next
     if fast:
         # fast is at the end, move slow one step further for comparison(cross middle one)

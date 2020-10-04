@@ -50,7 +50,7 @@ class LinkedList:
         # this loop
         # current will point to node 40 in the above example
         count = 1
-        while (count < k and current is not None):
+        while count < k and current is not None:
             current = current.next
             count += 1
 

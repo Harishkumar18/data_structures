@@ -26,7 +26,6 @@ class Solution:
             # abbd will give b in odd and bb in even
             odd_palin = self.helper(s, i, i)
             even_palin = self.helper(s, i, i + 1)
-            odd_palin = ""
             longest = max(odd_palin, even_palin, longest, key=len)
         return longest
 

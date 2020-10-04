@@ -13,6 +13,7 @@ Input: logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3
 Output: ["let1 art can","let3 art zero","let2 own kit dig","dig1 8 1 5 1","dig2 3 6"]
 """
 from typing import List
+from heapq import heappush, heappop
 
 
 class Solution:
@@ -25,3 +26,15 @@ class Solution:
                 letter_log.append(log)
         letter_log.sort(key=lambda x: (x.split(" ")[1:], x.split(" ")[0]))
         return letter_log + digit_log
+
+    def reorderlogfiles_using_heap(self, logs):
+        letter, digit, heap = [], [], []
+        for log in logs:
+            tail = log.split(" ", 1)[1]
+            if tail[0].isalpha():
+                heappush(heap, (tail, log))
+            else:
+                digit.append(log)
+        while heap:
+            letter.append(heappop(heap)[1])
+        return letter + digit

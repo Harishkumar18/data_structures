@@ -25,7 +25,7 @@ class Solution:
 
 
 s1 = Solution()
-inp_list = [1, 2, 3, 4, 5, 6, 7]
-# s1.rotate(inp_list, 6)
-s1.rotate2(inp_list, 6)
+inp_list = [1, 2, 3, 4, 5]
+s1.rotate(inp_list, 1)
+# s1.rotate2(inp_list, 6)
 print(inp_list)
