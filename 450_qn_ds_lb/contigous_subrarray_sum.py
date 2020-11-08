@@ -1,3 +1,6 @@
+"""find Largest sum contiguous Subarray [V. IMP]"""
+
+
 def contigous_max_sum(arr):
     global_sum = curr_sum = arr[0]
     for i in range(1, len(arr)):

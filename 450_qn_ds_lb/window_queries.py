@@ -42,6 +42,7 @@ https://binarysearch.com/problems/Window-Queries
 # brute force solution
 # below code is failing due to time limit
 
+
 class Solution:
     def solve(self, nums, queries, w):
         res = []
