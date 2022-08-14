@@ -38,20 +38,19 @@ def well_formed(n):
 
 
 def check_denom(func):
-    def func(arg1, arg2):
+    def inner(arg1, arg2):
         if arg2 == 0:
             print("Division by zero is not possible")
-            exit()
-        else:
-            return func(arg1, arg2)
-    return func
+            return
+        return func(arg1, arg2)
+    return inner
 
 @check_denom
 def divide(a, b):
     return a/b
 
 # print(divide(5, 0))
-print(divide(15, 5))
+print(divide(15, 0))
 
 
 # sql query
